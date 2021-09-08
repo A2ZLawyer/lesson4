@@ -1,0 +1,25 @@
+using System;
+
+namespace lesson4task1
+{
+    class Program
+    {
+        static string GetFullName(string firstName, string Patronymic, string lastName)
+        {
+            string FullName = firstName + " " + Patronymic + " " + lastName;
+            return FullName;
+        }
+
+        public static void Main(string[] args)
+        {
+           string Name = GetFullName("Иван", "Иванович", "Иванов");
+            Console.WriteLine(Name);
+           string Name2 = GetFullName("Петр", "Петрович", "Петров");
+            Console.WriteLine(Name2);
+            string Name3 = GetFullName("Сидр", "Сидорович", "Сидоров");
+            Console.WriteLine(Name3);
+            string Name4 = GetFullName("Василий", "Васильевич", "Васильев");
+            Console.WriteLine(Name4);
+        }
+    }
+}
