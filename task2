@@ -1,0 +1,25 @@
+using System;
+
+namespace lesson4task2
+{
+    class MainClass
+    {
+        static int SumElements(int[] MyArray, int i = 0)
+        {
+            if (i >= MyArray.Length)
+                return 0;
+            int result = SumElements(MyArray, i + 1);
+            return MyArray[i] + result;
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Введите элементы массива через пробел");
+            string a = Console.ReadLine();
+            string[] b = a.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] myArr = Array.ConvertAll(b, n => int.Parse(n));
+            int d = SumElements(myArr);
+            Console.WriteLine(d);
+
+        }
+    }
+}
