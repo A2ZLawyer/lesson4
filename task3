@@ -1,0 +1,66 @@
+using System;
+
+namespace lesson4task3
+{
+    class Program
+    {
+        enum season {Se, Winter, Spring, Summer, Autumn}
+        static season fromMonth(int MonNum)
+        {
+            try
+            {
+                if (MonNum > 12 || MonNum <= 0)
+                    throw new Exception("Ошибка: введите число от 1 до 12");
+                switch (MonNum)
+                {
+                    case 12:
+                        return season.Winter;
+                    case 1:
+                        return season.Winter;
+                    case 2:
+                        return season.Winter;
+                    case 3:
+                        return season.Spring;
+                    case 4:
+                        return season.Spring;
+                    case 5:
+                        return season.Spring;
+                    case 6:
+                        return season.Summer;
+                    case 7:
+                        return season.Summer;
+                    case 8:
+                        return season.Summer;
+
+                    default: return season.Autumn;
+                }
+            }
+            catch (Exception mistake)
+            {
+                Console.WriteLine(mistake.Message);
+                return season.Se;
+            }
+        }
+        static string Season(season s)
+        {
+            switch (s)
+            {
+                case season.Winter:
+                    return "Зима";
+                case season.Spring:
+                    return "Весна";
+                case season.Summer:
+                    return "Лето";
+                case season.Autumn:
+                    return "Осень";
+                default: return "";
+            }
+        }
+        static void Main(string[] args)
+        {
+                Console.WriteLine("Введите номер месяца: ");
+                Console.WriteLine(Season(fromMonth(Convert.ToInt32(Console.ReadLine()))));
+        }
+
+    }
+}
