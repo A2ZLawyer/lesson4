@@ -1,0 +1,27 @@
+using System;
+
+namespace lesson4task4
+{
+    class Program
+    {
+        private static void Main(string[] args)
+        {
+            Console.WriteLine("Для какого значения считать ряд Фибоначчи?");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int first = 0;
+            Console.Write(first + " ");
+            int next = 1;
+            Console.Write(next);
+            int sum = 0;
+            while (number >= sum)
+            {
+                sum = first + next;
+
+                Console.Write(" " + sum);
+
+                first = next;
+                next = sum;
+            }
+        }
+    }
+}
